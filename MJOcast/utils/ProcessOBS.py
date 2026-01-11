@@ -470,27 +470,27 @@ class MJOobsProcessor:
 
         ax = fig.add_subplot(311)
         plt.title('EOF1 (' + str(int(varfrac[0] * 100)) + '%)', fontsize=10)
-        plt.plot(eof1_olr, color='k', linewidth=2, linestyle='solid', label='OLR')
-        plt.plot(eof1_u850, color='r', linewidth=2, linestyle='dashed', label='U850')
-        plt.plot(eof1_u200, color='b', linewidth=2, linestyle='dotted', label='U200')
+        plt.plot(lons, eof1_olr, color='k', linewidth=2, linestyle='solid', label='OLR')
+        plt.plot(lons, eof1_u850, color='r', linewidth=2, linestyle='dashed', label='U850')
+        plt.plot(lons, eof1_u200, color='b', linewidth=2, linestyle='dotted', label='U200')
         plt.axhline(0, color='k')
         self.plot_eof(ax)
 
         # Plot EOF2
         ax = fig.add_subplot(312)
         plt.title('EOF2 (' + str(int(varfrac[1] * 100)) + '%)', fontsize=10)
-        plt.plot(eof2_olr, color='k', linewidth=2, linestyle='solid', label='OLR')
-        plt.plot(eof2_u850, color='r', linewidth=2, linestyle='dashed', label='U850')
-        plt.plot(eof2_u200, color='b', linewidth=2, linestyle='dotted', label='U200')
+        plt.plot(lons, eof2_olr, color='k', linewidth=2, linestyle='solid', label='OLR')
+        plt.plot(lons, eof2_u850, color='r', linewidth=2, linestyle='dashed', label='U850')
+        plt.plot(lons, eof2_u200, color='b', linewidth=2, linestyle='dotted', label='U200')
         plt.axhline(0, color='k')
         self.plot_eof(ax)
 
         # Plot EOF3
         ax = fig.add_subplot(313)
         plt.title('EOF3 (' + str(int(varfrac[2] * 100)) + '%)', fontsize=10)
-        plt.plot(eof3_olr, color='k', linewidth=2, linestyle='solid', label='OLR')
-        plt.plot(eof3_u850, color='r', linewidth=2, linestyle='dashed', label='U850')
-        plt.plot(eof3_u200, color='b', linewidth=2, linestyle='dotted', label='U200')
+        plt.plot(lons, eof3_olr, color='k', linewidth=2, linestyle='solid', label='OLR')
+        plt.plot(lons, eof3_u850, color='r', linewidth=2, linestyle='dashed', label='U850')
+        plt.plot(lons, eof3_u200, color='b', linewidth=2, linestyle='dotted', label='U200')
         plt.axhline(0, color='k')
         self.plot_eof(ax)
 

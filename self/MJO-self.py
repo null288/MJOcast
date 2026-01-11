@@ -1,4 +1,6 @@
 # %%
+import sys
+sys.path.append('/Users/usr0/Documents/001-AIproj/repo/MJOcast/')
 import MJOcast.utils.ProcessForecasts as ProFo 
 import MJOcast.utils.ProcessOBS as ProObs
 import MJOcast.utils.WHtools as WHtools
