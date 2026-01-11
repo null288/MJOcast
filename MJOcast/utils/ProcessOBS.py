@@ -97,8 +97,8 @@ class MJOobsProcessor:
         MJO_fobs.u200_norm.attrs['long_name'] = 'u200 normalized'
 
         MJO_fobs.u850_norm.attrs['units'] = 'stddev'
-        MJO_fobs.u850_norm.attrs['standard_name'] = 'u200 normalized'
-        MJO_fobs.u850_norm.attrs['long_name'] = 'u200 normalized'
+        MJO_fobs.u850_norm.attrs['standard_name'] = 'u850 normalized'
+        MJO_fobs.u850_norm.attrs['long_name'] = 'u850 normalized'
 
         # Load the BOM index data
         print('...attaching the BOM index for verification...')
@@ -358,8 +358,7 @@ class MJOobsProcessor:
         loc1, loc2, scale1, scale2 = self.check_MJO_orientation(eof_list, pcs, OBS_DS['lon'])
 
         eof_dict = {'solver':solver,'olr_norm':olr_norm,'u850_norm':u850_norm,'u200_norm':u200_norm,
-                   'eof_list':eof_list,'loc1':loc1,'loc2':loc2,'scale1':scale1,'scale2':scale2,'pcs':pcs,
-                   'eof_list':eof_list}
+                   'eof_list':eof_list,'loc1':loc1,'loc2':loc2,'scale1':scale1,'scale2':scale2,'pcs':pcs}
 
         # Get phase and EOFs based on orientation
         tot_dict = self.get_phase_and_eofs(eof_list, pcs, OBS_DS['lon'])

@@ -245,7 +245,7 @@ class MJOforecaster:
             temp_clim_olr = np.concatenate([np.array(OLR_clim.sel(dayofyear=slice(fordoy[0],365))['olr']),np.array(OLR_clim.sel(dayofyear=slice(1,fordoy[-1]+1))['olr'])],axis=0)
             temp_clim_olr = np.expand_dims(temp_clim_olr,0)
             if temp_clim_olr.shape[1]==numdays_out + 1:
-                temp_clim_olr = temp_clim_olr[:,:numdays_out,:,:]
+                temp_clim_olr = temp_clim_olr[:,:numdays_out,:]
             OLR_cesm_anom[:,:,:] = np.array(OLRxr)-temp_clim_olr
 
             ### u200 winds ####
@@ -254,7 +254,7 @@ class MJOforecaster:
             temp_clim_u200 = np.concatenate([np.array(U200_clim.sel(dayofyear=slice(fordoy[0],365))['uwnd200']),np.array(U200_clim.sel(dayofyear=slice(1,fordoy[-1]+1))['uwnd200'])],axis=0)
             temp_clim_u200 = np.expand_dims(temp_clim_u200,0)
             if temp_clim_u200.shape[1]==numdays_out + 1:
-                temp_clim_u200 = temp_clim_u200[:,:numdays_out,:,:]
+                temp_clim_u200 = temp_clim_u200[:,:numdays_out,:]
             U200_cesm_anom[:,:,:] = np.array(U200_cesm)-temp_clim_u200
 
             ### u850 winds ####
@@ -263,7 +263,7 @@ class MJOforecaster:
             temp_clim_u850 = np.concatenate([np.array(U850_clim.sel(dayofyear=slice(fordoy[0],365))['uwnd850']),np.array(U850_clim.sel(dayofyear=slice(1,fordoy[-1]+1))['uwnd850'])],axis=0)
             temp_clim_u850 = np.expand_dims(temp_clim_u850,0)
             if temp_clim_u850.shape[1]==numdays_out + 1:
-                temp_clim_u850 = temp_clim_u850[:,:numdays_out,:,:]
+                temp_clim_u850 = temp_clim_u850[:,:numdays_out,:]
             U850_cesm_anom[:,:,:] = np.array(U850_cesm)-temp_clim_u850
 
         return U850_cesm_anom, U200_cesm_anom, OLR_cesm_anom
@@ -482,7 +482,7 @@ class MJOforecaster:
             "eof2_olr":(["longitude"],np.array(self.MJO_fobs['eof2_olr'])),
             "eof1_u850":(["longitude"],np.array(self.MJO_fobs['eof1_u850'])),
             "eof2_u850":(["longitude"],np.array(self.MJO_fobs['eof2_u850'])),
-            "eof1_u200":(["longitude"],np.array(self.MJO_fobs['eof2_u200'])),
+            "eof1_u200":(["longitude"],np.array(self.MJO_fobs['eof1_u200'])),
             "eof2_u200":(["longitude"],np.array(self.MJO_fobs['eof2_u200'])),
             "u200_norm":(["time","number","longitude"],sv_u200), 
             "u850_norm":(["time","number","longitude"],sv_u850),
