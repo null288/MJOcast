@@ -3,3 +3,5 @@
 .ipynb_checkpoints
 *.egg-info
 /data
+.DS_Store
+**/.DS_Store
